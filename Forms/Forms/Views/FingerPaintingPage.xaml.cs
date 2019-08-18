@@ -12,12 +12,12 @@ using Xamarin.Forms.Xaml;
 namespace Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FingerPainting : ContentPage
+    public partial class FingerPaintingPage : ContentPage
     {
         private Dictionary<long, SKPath> temporaryPaths = new Dictionary<long, SKPath>();
         private List<SKPath> paths = new List<SKPath>();
 
-        public FingerPainting()
+        public FingerPaintingPage()
         {
             InitializeComponent();
 

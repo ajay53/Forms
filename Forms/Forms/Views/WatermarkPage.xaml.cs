@@ -113,7 +113,7 @@ namespace Forms.Views
                 
                 canvas.DrawBitmap(pic, SKRect.Create(offset, offsetTop, 1000, 1000));
 
-                SKBitmap stamp = SKBitmap.Decode("storage/emulated/0/Android/data/Forms.Forms/files/Pictures/Sample/test_1.jpg");
+                SKBitmap stamp = SKBitmap.Decode("storage/emulated/0/Android/data/com.companyname.Forms/files/Pictures/Sample/test_1.jpg");
 
                 canvas.DrawBitmap(stamp, SKRect.Create(offset, pic.Height, 100, 100));
                 ///
@@ -124,14 +124,14 @@ namespace Forms.Views
 
             //save the new image
             using (SKData encoded = finalImage.Encode(SKEncodedImageFormat.Png, 100))
-            using (Stream outFile = File.OpenWrite("storage/emulated/0/Android/data/Forms.Forms/files/Pictures/Sample/final.jpg"))
+            using (Stream outFile = File.OpenWrite("storage/emulated/0/Android/data/com.companyname.Forms/files/Pictures/Sample/final.jpg"))
             {
                 encoded.SaveTo(outFile);
                 Image temp = new Image
                 {
-                    Source = ImageSource.FromFile("storage/emulated/0/Android/data/Forms.Forms/files/Pictures/Sample/final.jpg")
+                    Source = ImageSource.FromFile("storage/emulated/0/Android/data/com.companyname.Forms/files/Pictures/Sample/final.jpg")
                 };
-                image.Source = ImageSource.FromFile("storage/emulated/0/Android/data/Forms.Forms/files/Pictures/Sample/final.jpg");
+                image.Source = ImageSource.FromFile("storage/emulated/0/Android/data/com.companyname.Forms/files/Pictures/Sample/final.jpg");
             }
 
         }
@@ -184,11 +184,11 @@ namespace Forms.Views
 
             //save the new image
             using (SKData encoded = finalImage.Encode(SKEncodedImageFormat.Png, 100))
-            using (Stream outFile = File.OpenWrite("storage/emulated/0/Android/data/Forms.Forms/files/Pictures/Sample/final.jpg"))
+            using (Stream outFile = File.OpenWrite("storage/emulated/0/Android/data/com.companyname.Forms/files/Pictures/Sample/final.jpg"))
             {
                 encoded.SaveTo(outFile);
-                image.Source = ImageSource.FromFile("storage/emulated/0/Android/data/Forms.Forms/files/Pictures/Sample/final.jpg");
-                markedImagePath = "storage/emulated/0/Android/data/Forms.Forms/files/Pictures/Sample/final.jpg";
+                image.Source = ImageSource.FromFile("storage/emulated/0/Android/data/com.companyname.Forms/files/Pictures/Sample/final.jpg");
+                markedImagePath = "storage/emulated/0/Android/data/com.companyname.Forms/files/Pictures/Sample/final.jpg";
             }
             return markedImagePath;
         }
@@ -199,7 +199,7 @@ namespace Forms.Views
 
             dbPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Marked_Images"); //Call Database 
             db = new SQLiteConnection(dbPath);
-            watermarkDB = db.Get<WatermarkDB>("one");
+            watermarkDB = db.Get<WatermarkDB>(cameraImageNameEntry);
 
             image.Source = ImageSource.FromStream(() => new MemoryStream(watermarkDB.MarkedImageByteArray)); 
         }

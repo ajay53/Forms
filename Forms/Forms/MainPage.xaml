@@ -15,14 +15,18 @@
 
         <Button Text="Finger Painting"
                 Command="{Binding NavigateCommand}"
-                CommandParameter="{x:Type local_View:FingerPainting}" />
+                CommandParameter="{x:Type local_View:FingerPaintingPage}" />
 
 
         <Button Text="WaterMark Image"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="{x:Type local_View:WatermarkPage}" />
 
-       
+
+        <Button Text="CrossWord"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="{x:Type local_View:ReadJsonPage}" />
+
         <Button Text="Service: Read Json ViaUrl/ Sqlite"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="{x:Type local_View:ReadJsonPage}" />

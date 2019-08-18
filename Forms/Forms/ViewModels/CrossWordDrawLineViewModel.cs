@@ -1,4 +1,5 @@
-﻿using SkiaSharp;
+﻿using CrossWordHelper;
+using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Forms.ViewModels
 {
-    public class DrawLineViewModel
+    public class CrossWordDrawLineViewModel
     {
         public static SKCanvasView canvas;
         public static SKPoint touchPressed;
@@ -30,7 +31,7 @@ namespace Forms.ViewModels
         SKSurface surface;
         SKCanvas skcanvas;
 
-        public DrawLineViewModel(SKCanvasView a_canvas)
+        public CrossWordDrawLineViewModel(SKCanvasView a_canvas)
         {
             canvas = a_canvas;
             canvas.PaintSurface += Canvas_PaintSurface;
