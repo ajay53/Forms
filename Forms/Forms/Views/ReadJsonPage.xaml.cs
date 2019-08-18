@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Net.Http;
 using Newtonsoft.Json;
-using Forms.Model;
+using Forms.Models;
 using SQLite;
 using System.IO;
 

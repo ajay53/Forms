@@ -1,4 +1,4 @@
-﻿using Forms.Model;
+﻿using Forms.Models;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using SkiaSharp;

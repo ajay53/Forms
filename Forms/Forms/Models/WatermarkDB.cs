@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace Forms.Model
+namespace Forms.Models
 {
     [Table("Watermark")]
     class WatermarkDB
