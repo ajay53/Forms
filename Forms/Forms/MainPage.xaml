@@ -2,13 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Forms"
+             xmlns:local_View="clr-namespace:Forms.View"
              x:Class="Forms.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <StackLayout.Resources>
+            <Style TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+        </StackLayout.Resources>
+
+        <Button Text="Finger Painting"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="{x:Type local_View:FingerPainting}" />
+
+
+        <Button Text="WaterMark Image"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="{x:Type local_View:WatermarkPage}" />
+
+       
+        <Button Text="Service: Read Json ViaUrl/ Sqlite"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="{x:Type local_View:ReadJsonPage}" />
+
     </StackLayout>
 
 </ContentPage>

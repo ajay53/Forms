@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Forms.View;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,8 +10,8 @@ namespace Forms
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            //MainPage = new CLickPhotoPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
