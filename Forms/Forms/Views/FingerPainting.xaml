@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="Forms.View.FingerPainting">
+             x:Class="Forms.Views.FingerPainting">
 
     <skia:SKCanvasView 
             x:Name="canvas"

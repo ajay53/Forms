@@ -7,7 +7,7 @@ using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Forms.View
+namespace Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class WatermarkPage : ContentPage

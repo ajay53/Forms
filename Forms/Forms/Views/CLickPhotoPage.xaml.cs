@@ -3,7 +3,7 @@ using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Forms.View
+namespace Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CLickPhotoPage : ContentPage

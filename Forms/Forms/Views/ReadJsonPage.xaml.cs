@@ -7,7 +7,7 @@ using Forms.Model;
 using SQLite;
 using System.IO;
 
-namespace Forms.View
+namespace Forms.Views
 {
 	public partial class ReadJsonPage : ContentPage
 	{

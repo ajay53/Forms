@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace Forms.ViewModel
+namespace Forms.ViewModels
 {
     class ListViewModel
     {
