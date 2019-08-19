@@ -16,6 +16,14 @@ namespace Forms.Droid
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            var width = Resources.DisplayMetrics.WidthPixels;
+            var height = Resources.DisplayMetrics.HeightPixels;
+            var density = Resources.DisplayMetrics.Density;
+
+            App.ScreenWidth = (width - 0.5f) / density;
+            App.ScreenHeight = (height - 0.5f) / density;
+
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)

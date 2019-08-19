@@ -25,7 +25,7 @@
 
         <Button Text="CrossWord"
                 Command="{Binding NavigateCommand}"
-                CommandParameter="{x:Type local_View:ReadJsonPage}" />
+                CommandParameter="{x:Type local_View:CrossWordPage}" />
 
         <Button Text="Service: Read Json ViaUrl/ Sqlite"
                 Command="{Binding NavigateCommand}"

@@ -3,13 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              mc:Ignorable="d"
              x:Class="Forms.Views.CrossWordPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <AbsoluteLayout x:Name="absoluteLayout">
+
+                <skia:SKCanvasView x:Name="canvas"
+                                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                </skia:SKCanvasView>
+
+                <Grid x:Name="grid" VerticalOptions="FillAndExpand" Padding="0" HorizontalOptions="FillAndExpand"
+                  RowSpacing="0" ColumnSpacing="0"
+                  AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"
+                  Opacity="0.5">
+
+                </Grid>
+
+            </AbsoluteLayout>
+            <Button x:Name="clearCanvasButton" Text="Clear Canvas">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
