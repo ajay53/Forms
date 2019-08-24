@@ -1,5 +1,6 @@
 ﻿using Android.Views;
 using CrossWordHelper;
+using Forms.Droid.Effects;
 using Forms.ViewModels;
 using SkiaSharp;
 using System;
@@ -8,6 +9,8 @@ using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
+[assembly: ResolutionGroupName("XamarinDocs")]
+[assembly: ExportEffect(typeof(CrossWordButtonEffect), nameof(FocusEffect))]
 namespace Forms.Droid.Effects
 {
     class CrossWordButtonEffect : PlatformEffect
