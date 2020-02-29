@@ -13,7 +13,7 @@ namespace Forms
         public App()
         {
             InitializeComponent();
-            //MainPage = new CLickPhotoPage();
+            //MainPage = new AppShell();
             MainPage = new NavigationPage(new MainPage());
         }
 
