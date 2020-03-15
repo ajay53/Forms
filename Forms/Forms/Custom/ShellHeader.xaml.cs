@@ -1,5 +1,4 @@
-﻿using Forms.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Forms.Views
+namespace Forms.Custom
 {
-    public partial class AppShell : Shell
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ShellHeader : ContentPage
     {
-        public AppShell()
+        public ShellHeader()
         {
             InitializeComponent();
-            BindingContext = new AppShellViewModel();
         }
     }
 }

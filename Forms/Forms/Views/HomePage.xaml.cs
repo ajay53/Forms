@@ -1,5 +1,4 @@
-﻿using Forms.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace Forms.Views
 {
-    public partial class AppShell : Shell
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class HomePage : ContentPage
     {
-        public AppShell()
+        public HomePage()
         {
             InitializeComponent();
-            BindingContext = new AppShellViewModel();
         }
     }
 }

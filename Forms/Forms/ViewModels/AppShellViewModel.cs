@@ -17,53 +17,28 @@ namespace Forms.ViewModels
         Dictionary<string, Type> routes = new Dictionary<string, Type>();
         public Dictionary<string, Type> Routes { get { return routes; } }
 
-        public ICommand HelpCommand => new Command<string>((url) => Device.OpenUri(new Uri(url)));
-        public ICommand RandomPageCommand => new Command(async () => await NavigateToRandomPageAsync().ConfigureAwait(true));
-
-        public AppShellViewModel(INavigation navigation)
+        public AppShellViewModel()
         {
-            this.navigation = navigation;
+            RegisterRoutes();
         }
 
         void RegisterRoutes()
         {
-            routes.Add("monkeydetails", typeof(CrossWordPage));
-            routes.Add("beardetails", typeof(FingerPaintingPage));
-            routes.Add("catdetails", typeof(WatermarkPage));
+            routes.Add("Home", typeof(HomePage));
+            routes.Add("CrossWord", typeof(CrossWordPage));
+            routes.Add("FingerPainting", typeof(FingerPaintingPage));
+            routes.Add("Watermark", typeof(WatermarkPage));
 
             foreach (var item in routes)
             {
                 Routing.RegisterRoute(item.Key, item.Value);
             }
+
+            //Task.Run(async () => 
+            //{
+            //    await Shell.Current.GoToAsync("Home");
+            //});
         }
-
-        async Task NavigateToRandomPageAsync()
-        {
-            string destinationRoute = routes.ElementAt(rand.Next(0, routes.Count)).Key;
-            string animalName = null;
-
-            switch (destinationRoute)
-            {
-                //case "monkeydetails":
-                //    animalName = MonkeyData.Monkeys.ElementAt(rand.Next(0, MonkeyData.Monkeys.Count)).Name;
-                //    break;
-                //case "beardetails":
-                //    animalName = BearData.Bears.ElementAt(rand.Next(0, BearData.Bears.Count)).Name;
-                //    break;
-                //case "catdetails":
-                //    animalName = CatData.Cats.ElementAt(rand.Next(0, CatData.Cats.Count)).Name;
-                //    break;
-                //case "dogdetails":
-                //    animalName = DogData.Dogs.ElementAt(rand.Next(0, DogData.Dogs.Count)).Name;
-                //    break;
-                //case "elephantdetails":
-                //    animalName = ElephantData.Elephants.ElementAt(rand.Next(0, ElephantData.Elephants.Count)).Name;
-                //    break;
-            }
-
-            ShellNavigationState state = Shell.Current.CurrentState;
-            await Shell.Current.GoToAsync($"{state.Location}/{destinationRoute}?name={animalName}").ConfigureAwait(false);
-            Shell.Current.FlyoutIsPresented = false;
-        }
+        
     }
 }
