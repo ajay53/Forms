@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,11 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace Forms.Custom
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ShellHeader : ContentPage
+    public partial class CommonHeader : Grid
     {
-        public ShellHeader()
+        public CommonHeader()
         {
             InitializeComponent();
+            BindingContext = new BaseViewModel();
         }
     }
 }
