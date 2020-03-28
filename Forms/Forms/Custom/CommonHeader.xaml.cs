@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace Forms.Custom
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CommonHeader : Grid
+    public partial class CommonHeader : StackLayout
     {
         public CommonHeader()
         {
