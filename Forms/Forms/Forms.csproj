@@ -10,22 +10,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.442" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.1.1" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Custom\ToolBarHeader.xaml.cs">
+      <DependentUpon>ToolBarHeader.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\FingerPaintingPage.xaml.cs">
       <DependentUpon>FingerPaintingPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Custom\CommonHeader.xaml">
+    <EmbeddedResource Update="Custom\ToolBarHeader.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CrossWordPage.xaml">

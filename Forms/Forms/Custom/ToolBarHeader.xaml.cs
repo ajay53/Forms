@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace Forms.Custom
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CommonHeader : StackLayout
+    public partial class ToolBarHeader : Grid
     {
-        public CommonHeader()
+        public ToolBarHeader()
         {
             InitializeComponent();
             BindingContext = new BaseViewModel();

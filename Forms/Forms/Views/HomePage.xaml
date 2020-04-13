@@ -8,14 +8,38 @@
              x:Class="Forms.Views.HomePage">
 
     <Shell.TitleView>
-        <custom:CommonHeader/>
+        <Frame
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="30"
+            WidthRequest="50"
+            Padding="10,5,10,5">
+            <custom:ToolBarHeader/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                        Command="{Binding TitleTappedCommand}"
+                        NumberOfTapsRequired="1"/>
+            </Frame.GestureRecognizers>
+        </Frame>
     </Shell.TitleView>
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to HomePage!"
+        <StackLayout x:Name="parentView">
+            <Frame 
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"/>
+                HorizontalOptions="CenterAndExpand"
+                Padding="10,5,10,5"
+                Margin="0">
+                <Label
+                    Text="HomePage"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TitleTappedCommand}"
+                        NumberOfTapsRequired="1"/>
+                </Frame.GestureRecognizers>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

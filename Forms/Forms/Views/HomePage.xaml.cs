@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Forms.Utility;
+using Forms.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,12 @@ namespace Forms.Views
         public HomePage()
         {
             InitializeComponent();
+            BindingContext = new HomePageViewModel(parentView);
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            UtilityFunction.ToastMessage("asdfg");
         }
     }
 }

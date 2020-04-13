@@ -1,10 +1,12 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Plugin.CurrentActivity;
 
 namespace Forms.Droid
 {
+    //Theme = "@style/MainTheme"
     [Activity(Label = "One", Icon = "@mipmap/one", Theme = "@style/MyTheme.Splash", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -23,6 +25,8 @@ namespace Forms.Droid
 
             App.ScreenWidth = (width - 0.5f) / density;
             App.ScreenHeight = (height - 0.5f) / density;
+
+            UserDialogs.Init(this);
 
             LoadApplication(new App());
         }
