@@ -7,12 +7,12 @@
              x:Class="Forms.Custom.ToolBarHeader">
 
     <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
 
     <Label
-        Margin="110,0,0,0"
-        Text="!DOPE!"
+        Margin="0,0,0,0"
+        Text="custom/Tool_Bar"
         HorizontalOptions="Center"
         VerticalOptions="Center"/>
 

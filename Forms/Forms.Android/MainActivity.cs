@@ -6,9 +6,9 @@ using Plugin.CurrentActivity;
 
 namespace Forms.Droid
 {
-    //Theme = "@style/MainTheme"
-    [Activity(Label = "One", Icon = "@mipmap/one", Theme = "@style/MyTheme.Splash", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    //Theme = "@style/MyTheme.Splash"
+    [Activity(Label = "One", Icon = "@mipmap/appIcon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

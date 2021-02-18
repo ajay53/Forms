@@ -13,8 +13,8 @@ namespace Forms
         public App()
         {
             InitializeComponent();
-            MainPage = new AppShell();
-            //MainPage = new NavigationPage(new MainPage());
+            //MainPage = new AppShell();
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

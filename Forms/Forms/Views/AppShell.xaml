@@ -1,29 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:views="clr-namespace:Forms.Views"
-       x:Name="appShell"
-       Shell.TabBarIsVisible="False"
-       x:Class="Forms.Views.AppShell">
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:views="clr-namespace:Forms.Views"
+        x:Name="appShell"
+        Shell.TabBarIsVisible="False"
+        x:Class="Forms.Views.AppShell">
 
     <Shell.FlyoutHeader>
         <Image Source="OutLaw.png"
-               Aspect="AspectFit"
-               HorizontalOptions="Center"/>
+                Aspect="AspectFit"
+                HorizontalOptions="Center"/>
     </Shell.FlyoutHeader>
     
     <FlyoutItem Route="animals"
                 Title="Animals"
                 FlyoutDisplayOptions="AsMultipleItems">
 
+        <Tab Title="Tabs"
+                Route="tabs">
+            <ShellContent Title="Click Photo"
+                            ContentTemplate="{DataTemplate views:CLickPhotoPage}" />
+            <ShellContent Title="WaterMark"
+                            ContentTemplate="{DataTemplate views:WatermarkPage}" />
+        </Tab>
         <ShellContent Title="Home"
-                      ContentTemplate="{DataTemplate views:HomePage}" />
+                        ContentTemplate="{DataTemplate views:HomePage}" />
         <ShellContent Title="CrossWord"
-                      ContentTemplate="{DataTemplate views:CrossWordPage}" />
+                        ContentTemplate="{DataTemplate views:CrossWordPage}" />
         <ShellContent Title="FingerPainting"
-                      ContentTemplate="{DataTemplate views:FingerPaintingPage}" />
+                        ContentTemplate="{DataTemplate views:FingerPaintingPage}" />
         <ShellContent Title="ReadJson"
-                      ContentTemplate="{DataTemplate views:ReadJsonPage}" />
+                        ContentTemplate="{DataTemplate views:ReadJsonPage}" />
     </FlyoutItem>
 
 </Shell>

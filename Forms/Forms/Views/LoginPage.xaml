@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Forms.Views.LoginPage">
+
+    <Grid Margin="20,0,20,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Login"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Style="{StaticResource HeaderLabel}"
+            Margin="0,20,0,0"
+            VerticalOptions="Start" 
+            HorizontalOptions="CenterAndExpand" />
+
+        <Label Text="Username: "
+            Grid.Row="1"
+            Grid.Column="0"
+            Style="{StaticResource FieldLabel}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+        <Entry Placeholder="Enter Username"
+            Grid.Row="1"
+            Grid.Column="1"
+            Style="{StaticResource FieldEntry}"
+            VerticalOptions="Center" 
+            HorizontalOptions="FillAndExpand" />
+
+        <Label Text="Password: "
+            Grid.Row="2"
+            Grid.Column="0"
+            Style="{StaticResource FieldLabel}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+        <Entry Placeholder="Enter Password"
+            Grid.Row="2"
+            Grid.Column="1"
+            Style="{StaticResource FieldEntry}"
+            VerticalOptions="Center" 
+            HorizontalOptions="FillAndExpand" />
+
+        <Button Text="Login"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Margin="0,0,0,10"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Command="{Binding LoginTappedCommand}" />
+        <Button Text="Register"
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Command="{Binding RegisterTappedCommand}" />
+    </Grid>
+</ContentPage>

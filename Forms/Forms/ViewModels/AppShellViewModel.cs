@@ -24,10 +24,12 @@ namespace Forms.ViewModels
 
         void RegisterRoutes()
         {
+            routes.Add("ClickPhoto", typeof(CLickPhotoPage));
+            routes.Add("Watermark", typeof(WatermarkPage));
             routes.Add("Home", typeof(HomePage));
             routes.Add("CrossWord", typeof(CrossWordPage));
             routes.Add("FingerPainting", typeof(FingerPaintingPage));
-            routes.Add("Watermark", typeof(WatermarkPage));
+            routes.Add("ReadJson", typeof(ReadJsonPage));
 
             foreach (var item in routes)
             {
