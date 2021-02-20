@@ -33,5 +33,7 @@
                         ContentTemplate="{DataTemplate views:ReadJsonPage}" />
     </FlyoutItem>
 
+    <MenuItem Text="Logout"
+              Command="{Binding LogoutTappedCommand}" />
 </Shell>
     

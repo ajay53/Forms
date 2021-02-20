@@ -13,11 +13,10 @@ namespace Forms.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CrossWordPage : ContentPage
     {
-
-        List<string> wordList = new List<string>();
+        readonly List<string> wordList = new List<string>();
         GridButton gridButton;
-        int gridMatrixSize = 4;
-        double gridButtonSize;
+        readonly int gridMatrixSize = 4;
+        readonly double gridButtonSize;
 
         public CrossWordPage()
         {

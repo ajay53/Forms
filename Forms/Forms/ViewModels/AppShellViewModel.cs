@@ -1,4 +1,5 @@
-﻿using Forms.Views;
+﻿using Forms.Utility;
+using Forms.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,12 @@ namespace Forms.ViewModels
     class AppShellViewModel
     {
         readonly INavigation navigation;
-        Random rand = new Random();
-        Dictionary<string, Type> routes = new Dictionary<string, Type>();
+        readonly Dictionary<string, Type> routes = new Dictionary<string, Type>();
         public Dictionary<string, Type> Routes { get { return routes; } }
 
-        public AppShellViewModel()
+        public AppShellViewModel(INavigation navigation)
         {
+            this.navigation = navigation;
             RegisterRoutes();
         }
 
@@ -41,6 +42,14 @@ namespace Forms.ViewModels
             //    await Shell.Current.GoToAsync("Home");
             //});
         }
-        
+
+        public Command LogoutTappedCommand => new Command(async() => 
+        {
+            Preferences.Set(Constant.IS_LOGGED_IN, Constant.FALSE);
+            Preferences.Set(Constant.USERNAME, "");
+            Preferences.Set(Constant.PASSWORD, "");
+
+            await navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+        });
     }
 }

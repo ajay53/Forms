@@ -1,6 +1,8 @@
 ﻿using Forms.Models;
+using Forms.Utility;
 using Forms.Views;
 using SQLite;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -32,8 +34,16 @@ namespace Forms
         public App()
         {
             InitializeComponent();
-            //MainPage = new AppShell();
-            MainPage = new NavigationPage(new LoginPage());
+            
+            if(Preferences.Get(Constant.IS_LOGGED_IN, Constant.FALSE).Equals(Constant.TRUE))
+            {
+                MainPage = new AppShell();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new LoginPage());
+            }
+            
         }
 
         protected override void OnStart()

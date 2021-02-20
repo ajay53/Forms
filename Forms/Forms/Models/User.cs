@@ -8,6 +8,13 @@ namespace Forms.Models
     [Table("user")]
     class User
     {
+        public User() { }
+        public User(string username, string password)
+        {
+            Username = username;
+            Password = password;
+        }
+
         [PrimaryKey,Column("username")]
         public string Username { get; set; }
 

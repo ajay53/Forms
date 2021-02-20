@@ -3,6 +3,7 @@ using Forms.Utility;
 using Forms.Views;
 using System;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace Forms.ViewModels
 {
@@ -13,13 +14,11 @@ namespace Forms.ViewModels
         public LoginViewModel(INavigation navigation)
         {
             this.navigation = navigation;
-            User = new User();
+            User = new User("","");
         }
 
         public Command LoginTappedCommand => new Command(() =>
         {
-            //UtilityFunction.ToastMessage("Login Tapped");
-            
             if (!AreFieldsEmpty())
             {
                 User user = FetchUser(User.Username);
@@ -29,6 +28,9 @@ namespace Forms.ViewModels
                     if(User.Password == user.Password)
                     {
                         Application.Current.MainPage = new AppShell();
+                        Preferences.Set(Constant.IS_LOGGED_IN, Constant.TRUE);
+                        Preferences.Set(Constant.USERNAME, user.Username);
+                        Preferences.Set(Constant.PASSWORD, user.Password);
                     }
                     else
                     {
@@ -40,11 +42,14 @@ namespace Forms.ViewModels
                     UtilityFunction.ToastMessage("User does not exist, Please register");
                 }
             }
+            else
+            {
+                UtilityFunction.ToastMessage("Please fill all fields");
+            }
         });
 
         public Command RegisterTappedCommand => new Command(() =>
         {
-            UtilityFunction.ToastMessage("Register Tapped");
             navigation.PushAsync(new RegistrationPage());
         });
 

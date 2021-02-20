@@ -1,5 +1,4 @@
-﻿using Forms.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Forms.Custom
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ToolBarHeader : Grid
+    public partial class ToolBar : StackLayout
     {
-        public ToolBarHeader()
+        public ToolBar()
         {
             InitializeComponent();
-            BindingContext = new BaseViewModel();
         }
     }
 }

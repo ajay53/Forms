@@ -2,9 +2,6 @@
 using SkiaSharp.Views.Forms;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,8 +11,8 @@ namespace Forms.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FingerPaintingPage : ContentPage
     {
-        private Dictionary<long, SKPath> temporaryPaths = new Dictionary<long, SKPath>();
-        private List<SKPath> paths = new List<SKPath>();
+        private readonly Dictionary<long, SKPath> temporaryPaths = new Dictionary<long, SKPath>();
+        private readonly List<SKPath> paths = new List<SKPath>();
 
         public FingerPaintingPage()
         {

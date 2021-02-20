@@ -14,7 +14,7 @@
             HeightRequest="30"
             WidthRequest="50"
             Padding="10,5,10,5">
-            <custom:ToolBarHeader/>
+            <custom:ToolBar/>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer
                         Command="{Binding TitleTappedCommand}"
@@ -22,7 +22,7 @@
             </Frame.GestureRecognizers>
         </Frame>
     </Shell.TitleView>
-    
+
     <ContentPage.Content>
         <StackLayout x:Name="parentView">
             <Frame 
