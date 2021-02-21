@@ -30,7 +30,8 @@
             Style="{StaticResource FieldLabel}"
             VerticalOptions="Center" 
             HorizontalOptions="Start" />
-        <Entry Placeholder="Enter Username"
+        <Entry x:Name="entryUsername"
+            Placeholder="Enter Username"
             Grid.Row="1"
             Grid.Column="1"
             Text="{Binding User.Username}"
@@ -44,7 +45,8 @@
             Style="{StaticResource FieldLabel}"
             VerticalOptions="Center" 
             HorizontalOptions="Start" />
-        <Entry Placeholder="Enter Password"
+        <Entry x:Name="entryPassword"
+            Placeholder="Enter Password"
             Grid.Row="2"
             Grid.Column="1"
             Text="{Binding User.Password}"
@@ -58,6 +60,10 @@
                 Margin="0,0,0,10"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
+                IsEnabled="False"
+                TextColor="{Binding Source={x:Reference entryUsername},
+                                    Path=Text,
+                                    Converter={StaticResource textToColor}}"
                 Command="{Binding LoginTappedCommand}" />
         <Button Text="Register"
                 Grid.Row="4"
